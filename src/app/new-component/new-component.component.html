@@ -1,0 +1,25 @@
+
+<h1> {{title}}</h1>
+<div [class.myClass]="!showClass"> Class Binding Example</div><hr>
+
+<h2>If and For Example</h2>
+<p *ngIf="trueOrFalse" class="ng-if-true"> ngIf condition is met, so the text color is blue</p>
+<p *ngIf="!trueOrFalse" class="ng-if-false"> ngIf condition failed, so the text color is red</p>
+<!-- <p *ngIf="trueOrFalse" class="ng-if-false"> dummy</p> -->
+<h2>Programming Languages</h2>
+<ul>
+<li *ngFor="let pLanguages of arr">
+  <p >{{pLanguages}}</p>
+</li>
+</ul>
+<hr>
+<h2>On click and Keyup Example</h2>
+<input type="text" #input (keyup)="onKeyUp($event)" (keyup.enter)="onEnter(input.value)">
+<p>{{value}}</p>
+<input type="button" (click)="onClickB()">
+<hr>
+<h2>One way and Two way Binding</h2>
+<p>{{example}}</p>
+<input type="text" [(ngModel)]="firstName" >
+<input type="text" [(ngModel)]="lastName">
+<p>Hi {{firstName}}{{lastName}}</p>
